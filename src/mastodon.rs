@@ -80,7 +80,7 @@ impl Mastodon {
         (post (domain: String,)) block_domain: "domain_blocks" => Empty,
         (post (id: &str,)) authorize_follow_request: "accounts/follow_requests/authorize" => Empty,
         (post (id: &str,)) reject_follow_request: "accounts/follow_requests/reject" => Empty,
-        (get  (local: bool,)) get_public_timeline: "timelines/public" => Vec<Status>,
+        (get  (local: bool, remote: bool,)) get_public_timeline: "timelines/public" => Vec<Status>,
         (post (uri: Cow<'static, str>,)) follows: "follows" => Account,
         (post) clear_notifications: "notifications/clear" => Empty,
         (get) get_push_subscription: "push/subscription" => Subscription,
